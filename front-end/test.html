@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 뭐할까?</title>
+    </head>
+<body>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgb(10, 98, 38);
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  text-align: center;
+  padding:10px;
+}
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: rgb(255, 239, 225);
+}
+
+li {
+  float:left;
+}
+
+li a {
+  display: inline-block;
+  color: rgb(13, 255, 0);
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#left {
+  float: left;
+  background-color: rgb(113, 174, 21);
+  height: 100vh;
+  width: 210px;
+}
+
+#profile {
+  font-size: 20px;
+  padding:10px;
+  color: rgb(255, 255, 255);
+}
+table {
+  font-size: 17px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  width: 200px;
+  border: 0;
+}
+
+th {
+  background-color: rgb(192, 82, 82);
+  padding: 15px;
+}
+
+
+.bigbox {
+  display: grid;
+  grid-template-rows: auto auto auto; 
+  background-color: rgb(3, 9, 0);
+  margin: 0;
+  text-align: center;
+  justify-items: center; 
+}
+
+hr {
+  border: none;
+  border-top: 1px solid black;
+  margin: 20px 0;
+}
+.box3 img {
+  width:200px;
+  height: 180px;
+  padding: 0px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  width:100%;
+}
+
+
+
+h2 {
+  padding:10px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #00ff6e;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00ff77;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+.column-wrapper {
+  column-count: 1;
+  column-gap: 20px;
+}
+
+#names-q1 {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+#names-q1 li {
+  margin-bottom: 10px;
+  list-style-type: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+p {
+  padding:10px;
+  text-align: center;
+}
+
+    </style>
+ 
+    <header id="home">
+        <h1>오늘 뭐할까?</h1>
+    
+    <div id="list">
+      <nav>
+        <ul>
+            <li><a href="#profile">프로필</a></li>
+            <li><a href="#activity">액티비티</a></li>
+            <li><a href="#housework">집안일</a></li>
+            <li><a href="#rest">휴식</a></li>
+            <li><a href="#game">게임</a></li>
+            <li><a href="#study">공부</a></li>        
+        </ul>
+        
+       </nav>
+    </div>
+  </header>
+    <div id="left">
+        <div>
+            <h1 id="profile">나를 소개합니다!</h1>
+        </div>
+        <div id="koko" style="width: max-content;">
+            <img src="곰돌이푸.jpeg" width="200" alt="곰돌이푸" style="padding-left: 5px;">
+        </div>
+        
+        <div>
+            <table style="padding-left: 5px; border:0;">
+                <tr>
+                    <th>이름</th>
+                    <td>ㅇㅇㅇ</td>
+                </tr>
+                <tr>
+                    <th>만나이</th>
+                    <td>XX</td>
+                </tr>
+                <tr>
+                    <th>학과</th>
+                    <td>ㅇㅇ학과</td>
+                </tr>
+                <tr>
+                    <th>성별</th>
+                    <td>남/녀</td>
+                </tr>
+            </table>
+        </div>
+      </div>
+    
+      <div class="bigbox">
+        
+
+        </div>
+        <hr>
+        <div id="hobby">
+          <h2>내가 좋아하는 것들</h2>
+            
+          <div class="box3">
+            <p>드럼치기</p>
+            <p>잠자기</p>
+            <p>술마시기</p>
+            
+          </div> 
+        </div>
+        <hr>
+        <section id="activity">
+            <h2>액티비티</h2>
+            <p>여기는 activity의 창입니다.</p>
+        </section>
+    
+        <section id="housework">
+            <h2>집안일</h2>
+            <p>여기는 housework의 창입니다.</p>
+        </section>
+    
+        <section id="rest">
+            <h2>휴식</h2>
+            <p>여기는 rest의 창입니다.</p>
+        </section>
+    
+        <section id="game">
+            <h2>게임</h2>
+            <p>여기는 game의 창입니다.</p>
+        </section>
+    
+        <section id="study">
+            <h2>공부</h2>
+            <p>여기는 study의 창입니다.</p>
+        </section>
+        </div>
+        </div>
+
+    
+    <footer>
+      <p>Copyright © 2023 웹9조</p>
+    </footer>
+</body>
+</html>
