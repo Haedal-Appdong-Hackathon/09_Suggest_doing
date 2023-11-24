@@ -20,7 +20,7 @@
     </div>
     <div class="login_box">
         <form method="get" action="./mainchoose.html" class="login_form">
-            <input type="email" placeholder="e-mail" name="" id="id">
+            <input type="email" placeholder="e-mail" name="" id="id" required>
             <input type="password" name="" placeholder="비밀번호" id="password">
             <div class="link">
                 <button id="request" class="btn" onclick="login()">Sign in</button>
@@ -41,11 +41,11 @@
         console.log(id,password);
         
         // 간단한 로그인 검증 로직
-        if (id === "admin" && password === "password") {
+        if (id === "admin@example.com" && password === "password") {
             alert("로그인 성공!");
             // 로그인 성공 시, 다음 페이지로 이동하거나 원하는 동작 수행
             // window.location.href = "다음페이지URL";
-            window.location.href ="./mainchoose.html"
+            window.location.href ="./maindesign.html"
         } else {
             alert("로그인 실패. 사용자명과 비밀번호를 확인해주세요.");
         }

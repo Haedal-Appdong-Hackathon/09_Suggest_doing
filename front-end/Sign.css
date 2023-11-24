@@ -1,6 +1,9 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Jua', sans-serif;
+    font-weight: 100;
+
   }
   
   .Sign_area{
@@ -54,9 +57,20 @@
   .btn{
     width: 300px;
     height: 50px;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     background-color: #64DB99;
     color: white;
     font-weight: bold;
     border-radius: 10px;
+  }
+
+  .signUp-intro{
+    font-size: 1.3rem;
+  }
+
+  a{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #C71585;
+    text-decoration: none;
   }
