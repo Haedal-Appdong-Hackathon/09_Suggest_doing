@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0; 
+            height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bigbox1 {
+            background-color: whitesmoke;
+            border: 2px solid gray;
+            height: 450px;
+            width: 700px;
+            position: relative; 
+        }
+
+        .horizontal-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 12.5%; 
+            border-top: 2px solid black; 
+        }
+
+        .xx {
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="bigbox1">
+        <div class="horizontal-line"></div>
+        <p class="xx">x</p>
+    </div>
+</body>
+</html>
