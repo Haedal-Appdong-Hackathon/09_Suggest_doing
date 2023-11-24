@@ -1,4 +1,5 @@
 const asyncHandler = require('express-async-handler');
+const Contact = require("../models/contactModel");
 
 const getAllContacts = asyncHandler(async (req, res) => {
     res.status(200).send("Contacts Page");
