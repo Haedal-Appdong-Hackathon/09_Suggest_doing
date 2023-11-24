@@ -9,9 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
     <title>Document</title>
-    <style>
-        
-    </style>
 </head>
 <body>
     <div class="bigbox1">
@@ -34,7 +31,7 @@
                     <option value="3시간">3시간</option>
                 </select>
             </div>
-            <input type="submit" value="결과는?" class="check-btn">
+            <input type="submit" value="결과는?" class="check-btn" onclick= "">
         </div>
         <div class="output">
             <h1>결과 출력</h1>
@@ -43,4 +40,30 @@
         </div>
     </div>
 </body>
+
+<script>
+    function sendSelectedValue() {
+      // 선택된 값을 가져오기
+      const time = document.getElementById('time');
+      const selectedValue = time.options[time.selectedIndex].value;
+
+      // Fetch API를 사용하여 서버로 POST 요청 보내기
+      fetch('/submit-selected-value', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ selectedValue }),
+      })
+      .then(response => response.text())
+      .then(message => {
+        // 응답 메시지를 출력
+        document.getElementById('response').innerText = message;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+</script>
 </html>
+
