@@ -9,7 +9,7 @@
 <body>
     <br><h1>회원가입</h1>
     <div class="Sign_area">
-        <form action="" class="Sign_form">
+        <form action="/signup" class="Sign_form">
             <input type="text" placeholder="닉네임" id="username" class="text">
             <br>
             <input type="text" placeholder ="이메일" id="" class="text">
@@ -27,7 +27,29 @@
 
 <script>
     function SignIn(){
+        const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
 
+      // FormData를 사용하여 POST 요청 만들기
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('password', password);
+
+      // Fetch API를 사용하여 서버로 POST 요청 보내기
+      fetch('/signup', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(message => {
+        // 응답 메시지를 출력
+        document.getElementById('signupMessage').innerText = message;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
     }
 </script>
 </html>

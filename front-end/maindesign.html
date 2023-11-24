@@ -4,45 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c748066e11.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
     <title>Document</title>
     <style>
-        body {
-            margin: 0; 
-            height: 100vh; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .bigbox1 {
-            background-color: whitesmoke;
-            border: 2px solid gray;
-            height: 450px;
-            width: 700px;
-            position: relative; 
-        }
-
-        .horizontal-line {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 12.5%; 
-            border-top: 2px solid black; 
-        }
-
-        .logo1{
-            top:3%;
-            display: flex;
-            justify-content: flex-end;
-            font-size: 2rem;
-        }
+        
     </style>
 </head>
 <body>
     <div class="bigbox1">
         <div class="horizontal-line"></div>
-        <div class="logo1"><i class="fa-solid fa-xmark"></i></div>
+            <div class="logo_bar">
+            <div class="logo2"></i></div>
+            <div class="service"><h1>아..! 뭐하지?</h1></div>
+            <div class="logo1"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+        <div class="content" id="home">
+                <p>뭐할지 모를 때 골라드립니다</p>
+            <p>시간을 골라주세요!</p>
+        <div class="set1">
+                <div class="lable">시간</div>
+                <div>
+                <select class="select" id="time" name="time" onclick="showDropdown('timeDropdown')">
+                    <option value="30분">30분</option>
+                    <option value="1시간">1시간</option>
+                    <option value="2시간">2시간</option>
+                    <option value="3시간">3시간</option>
+                </select>
+            </div>
+            <input type="submit" value="결과는?" class="check-btn">
         </div>
+        <div class="output">
+            <h1>결과 출력</h1>
+            <div class="logo2"><i class="fa-solid fa-arrow-pointer"></i></div>
+        </div>
+        </div>
+    </div>
 </body>
 </html>
      
