@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 뭐할까?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: rgb(255, 255, 255);
+            color: rgb(8, 8, 8);
+            font-size: 25px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: inline-block;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        #left {
+            float: left;
+            background-color: rgb(33, 203, 14);
+            height: 100vh;
+            width: 210px;
+        }
+
+        #profile {
+            font-size: 20px;
+            padding: 10px;
+            color: rgb(255, 255, 255);
+        }
+
+        table {
+            font-size: 17px;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            width: 200px;
+            border: 0;
+        }
+
+        .bigbox {
+            display: grid;
+            grid-template-rows: auto auto auto; 
+            background-color: rgb(3, 9, 0);
+            margin: 0;
+            text-align: center;
+            justify-items: center; 
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        button.check-btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="home">
+        <h1>오늘 뭐할까?</h1>
+        <p1>뭐할지 모를때 골라드립니다</p1>
+    </header>
+
+    <div class="bigbox"></div>
+
+    <h1>골라골라</h1>
+    <form id="activityForm" action="https://www.minzkn.com/random.html" method="get">
+        
+
+        <div class="dropdown" id="timeDropdown">
+            <label for="time">시간</label>
+            <select id="time" name="time" onclick="showDropdown('timeDropdown')">
+                <option value="30분">30분</option>
+                <option value="1시간">1시간</option>
+                <option value="2시간">2시간</option>
+                <option value="3시간">3시간</option>
+            </select>
+        </div><br><br>
+
+        <div id="checkboxContainer"></div>
+        <input type="text" id="userInput" placeholder="입력 후 추가 누르세요">
+        <button type="button" onclick="addCheckbox()">추가</button>
+        <input type="submit" value="결과는?">
+
+        <button type="button" class="check-btn" onclick="checkSelection()">오늘 하루 수고했어요</button>
+    </form>
+
+    <script>
+        function showDropdown(dropdownId) {
+            var dropdownContent = document.getElementById(dropdownId).getElementsByClassName('dropdown-content')[0];
+            dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function addCheckbox() {
+            var container = document.getElementById('checkboxContainer');
+            var userInput = document.getElementById('userInput').value;
+
+            if (userInput.trim() !== "") {
+                var checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = 'nb[]';
+                checkbox.value = userInput;
+
+                var label = document.createElement('label');
+                label.appendChild(checkbox);
+                label.appendChild(document.createTextNode(' ' + userInput));
+
+                container.appendChild(label);
+                document.getElementById('userInput').value = "";
+            }
+        }
+
+        function checkSelection() {
+            var checkboxes = document.getElementsByName('nb[]');
+            var checkedCount = 0;
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    checkedCount++;
+                }
+            }
+
+            var percentage = (checkedCount / checkboxes.length) * 100;
+
+            var resultMessage = "";
+
+            if (percentage <= 50) {
+                resultMessage = "아쉬워요";
+            } else if (percentage > 50 && percentage < 100) {
+                resultMessage = "잘했어요";
+            } else if (percentage === 100) {
+                resultMessage = "완벽해요";
+            }
+
+            alert(resultMessage);
+        }
+    </script>
+
+    <footer>
+        <p>Copyright © 2023 웹9조</p>
+    </footer>
+</body>
+</html>
