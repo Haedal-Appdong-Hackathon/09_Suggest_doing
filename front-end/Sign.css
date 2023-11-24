@@ -1,0 +1,63 @@
+*{
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .Sign_area{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .Sign_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Sign_form input{
+    margin-bottom: 20px;
+    max-width: 300px;
+    height: 30px;
+    font-size: 1.5rem;
+  }
+
+  .Sign_form .Link{
+    margin-top: 20px;
+  }
+
+  .select{
+    height: 50px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: white;
+  }
+  
+  h1{
+    text-align: center;
+  }
+  .Sign_page{
+    text-align: center;
+  }
+  
+  p{
+    font-size: 20px;
+  }
+  
+  .btn{
+    width: 300px;
+    height: 50px;
+    font-size: 1.3rem;
+    background-color: #64DB99;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+  

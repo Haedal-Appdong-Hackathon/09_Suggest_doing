@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="text">
+            <h1>오늘 뭐할까?</h1>
+            <p>공강시간이나 잉여시간 등 잠깐 비는 시간에</p>
+            <p>뭘 해야 할 지 모르겠을 떄</p>
+            <p>무작위로 할 일을 골라주는 서비스</p>
+        </div>
+    </div>
+    <div class="login_box">
+        <form method="get" action="./mainchoose.html" class="login_form">
+            <input type="email" placeholder="e-mail" name="" id="id">
+            <input type="password" name="" placeholder="비밀번호" id="password">
+            <div class="link">
+                <button id="request" class="btn" onclick="login()">Sign in</button>
+                <label class="signup-intro">계정이 없으신가요?
+                <a href="./Sign.html" target="_self">회원가입</a></label>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    function login() {
+        event.preventDefault();
+
+        var id = document.getElementById("id").value;
+        var password = document.getElementById("password").value;
+
+        console.log(id,password);
+        
+        // 간단한 로그인 검증 로직
+        if (id === "admin" && password === "password") {
+            alert("로그인 성공!");
+            // 로그인 성공 시, 다음 페이지로 이동하거나 원하는 동작 수행
+            // window.location.href = "다음페이지URL";
+            window.location.href ="./mainchoose.html"
+        } else {
+            alert("로그인 실패. 사용자명과 비밀번호를 확인해주세요.");
+        }
+    }
+
+</script>
+
+</html>
